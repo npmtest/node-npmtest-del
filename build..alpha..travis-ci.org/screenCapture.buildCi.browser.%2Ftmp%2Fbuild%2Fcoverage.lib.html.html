@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-del/del/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-del/node_modules/del/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,9 +190,9 @@
 <body>
 <div class="header low">
     <h1 style="font-weight: bold;">
-        <a href="https://github.com/npmtest/node-npmtest-del">npmtest-del (v0.0.2)</a>
+        <a href="https://github.com/npmtest/node-npmtest-del">npmtest-del (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-del/del/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-del/node_modules/del/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">28.57% <small>(12 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-del/del/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-del/node_modules/del/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -374,73 +372,74 @@ var rimraf = require('rimraf');
 &nbsp;
 var rimrafP = pify(rimraf, Promise);
 &nbsp;
-<span class="fstat-no" title="function not covered" >function safeCheck(file) {</span>
-<span class="cstat-no" title="statement not covered" >	if (isPathCwd(file)) {</span>
-<span class="cstat-no" title="statement not covered" >		throw new Error('Cannot delete the current working directory. Can be overriden with the `force` option.');</span>
+<span class="fstat-no" title="function not covered">function safeCheck(file) {</span>
+<span class="cstat-no" title="statement not covered">	if (isPathCwd(file)) {</span>
+<span class="cstat-no" title="statement not covered">		throw new Error('Cannot delete the current working directory. Can be overriden with the `force` option.');</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (!isPathInCwd(file)) {</span>
-<span class="cstat-no" title="statement not covered" >		throw new Error('Cannot delete files/folders outside the current working directory. Can be overriden with the `force` option.');</span>
+<span class="cstat-no" title="statement not covered">	if (!isPathInCwd(file)) {</span>
+<span class="cstat-no" title="statement not covered">		throw new Error('Cannot delete files/folders outside the current working directory. Can be overriden with the `force` option.');</span>
 	}
 }
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered" >function (patterns, opts) {</span>
-<span class="cstat-no" title="statement not covered" >	opts = objectAssign({}, opts);</span>
+module.exports = <span class="fstat-no" title="function not covered">function (patterns, opts) {</span>
+<span class="cstat-no" title="statement not covered">	opts = objectAssign({}, opts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var force = opts.force;</span>
-<span class="cstat-no" title="statement not covered" >	delete opts.force;</span>
+<span class="cstat-no" title="statement not covered">	var force = opts.force;</span>
+<span class="cstat-no" title="statement not covered">	delete opts.force;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var dryRun = opts.dryRun;</span>
-<span class="cstat-no" title="statement not covered" >	delete opts.dryRun;</span>
+<span class="cstat-no" title="statement not covered">	var dryRun = opts.dryRun;</span>
+<span class="cstat-no" title="statement not covered">	delete opts.dryRun;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return globby(patterns, opts).then(<span class="fstat-no" title="function not covered" >function (files) {</span></span>
-<span class="cstat-no" title="statement not covered" >		return Promise.all(files.map(<span class="fstat-no" title="function not covered" >function (file) {</span></span>
-<span class="cstat-no" title="statement not covered" >			if (!force) {</span>
-<span class="cstat-no" title="statement not covered" >				safeCheck(file);</span>
+<span class="cstat-no" title="statement not covered">	return globby(patterns, opts).then(<span class="fstat-no" title="function not covered">function (files) {</span></span>
+<span class="cstat-no" title="statement not covered">		return Promise.all(files.map(<span class="fstat-no" title="function not covered">function (file) {</span></span>
+<span class="cstat-no" title="statement not covered">			if (!force) {</span>
+<span class="cstat-no" title="statement not covered">				safeCheck(file);</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			file = path.resolve(opts.cwd || '', file);</span>
+<span class="cstat-no" title="statement not covered">			file = path.resolve(opts.cwd || '', file);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			if (dryRun) {</span>
-<span class="cstat-no" title="statement not covered" >				return Promise.resolve(file);</span>
+<span class="cstat-no" title="statement not covered">			if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered">				return Promise.resolve(file);</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			return rimrafP(file).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >				return file;</span>
+<span class="cstat-no" title="statement not covered">			return rimrafP(file).then(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">				return file;</span>
 			});
 		}));
 	});
 };
 &nbsp;
-module.exports.sync = <span class="fstat-no" title="function not covered" >function (patterns, opts) {</span>
-<span class="cstat-no" title="statement not covered" >	opts = objectAssign({}, opts);</span>
+module.exports.sync = <span class="fstat-no" title="function not covered">function (patterns, opts) {</span>
+<span class="cstat-no" title="statement not covered">	opts = objectAssign({}, opts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var force = opts.force;</span>
-<span class="cstat-no" title="statement not covered" >	delete opts.force;</span>
+<span class="cstat-no" title="statement not covered">	var force = opts.force;</span>
+<span class="cstat-no" title="statement not covered">	delete opts.force;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var dryRun = opts.dryRun;</span>
-<span class="cstat-no" title="statement not covered" >	delete opts.dryRun;</span>
+<span class="cstat-no" title="statement not covered">	var dryRun = opts.dryRun;</span>
+<span class="cstat-no" title="statement not covered">	delete opts.dryRun;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return globby.sync(patterns, opts).map(<span class="fstat-no" title="function not covered" >function (file) {</span></span>
-<span class="cstat-no" title="statement not covered" >		if (!force) {</span>
-<span class="cstat-no" title="statement not covered" >			safeCheck(file);</span>
+<span class="cstat-no" title="statement not covered">	return globby.sync(patterns, opts).map(<span class="fstat-no" title="function not covered">function (file) {</span></span>
+<span class="cstat-no" title="statement not covered">		if (!force) {</span>
+<span class="cstat-no" title="statement not covered">			safeCheck(file);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		file = path.resolve(opts.cwd || '', file);</span>
+<span class="cstat-no" title="statement not covered">		file = path.resolve(opts.cwd || '', file);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (!dryRun) {</span>
-<span class="cstat-no" title="statement not covered" >			rimraf.sync(file);</span>
+<span class="cstat-no" title="statement not covered">		if (!dryRun) {</span>
+<span class="cstat-no" title="statement not covered">			rimraf.sync(file);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return file;</span>
+<span class="cstat-no" title="statement not covered">		return file;</span>
 	});
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:43:12 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 17:00:04 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
