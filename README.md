@@ -1,6 +1,6 @@
 # npmtest-del
 
-#### test coverage for  [del (v2.2.2)](https://github.com/sindresorhus/del#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-del.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-del) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-del.svg)](https://travis-ci.org/npmtest/node-npmtest-del)
+#### basic test coverage for  [del (v2.2.2)](https://github.com/sindresorhus/del#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-del.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-del) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-del.svg)](https://travis-ci.org/npmtest/node-npmtest-del)
 
 #### Delete files and folders
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-del/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-del/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-del/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-del/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-del/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-del/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-del/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-del/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-del/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-del/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-del/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-del/build/coverage.html/index.html)
 
@@ -111,7 +111,8 @@
     "scripts": {
         "test": "xo && ava"
     },
-    "version": "2.2.2"
+    "version": "2.2.2",
+    "bin": {}
 }
 ```
 
